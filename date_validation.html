@@ -13,19 +13,25 @@
   		
   		$(document).ready(function() {
 
+  			// jqueryui datepicker
   			$('#start').datepicker({minDate: 0});
   			$('#to').datepicker({minDate: 1});
 
-
+  			// user clicks submit
   			$('#submit').click(function(e) {
   				e.preventDefault();
 
+  				// hide any error messages
   				$('span').hide();
 
+
+  				// grab values
   				var start = $('#start').val();
   				var to = $('#to').val();
   				var name = $('#name').val();
 
+
+  				// validation messages
   				if(start === '') {
   					$('#start').siblings('span').show();
   				}
@@ -39,6 +45,7 @@
   				}
 
 
+  				// if no fields are blanks, do the alert
   				if( start != '' &&  to != '' && name != '') {
   					alert('Thanks ' + name + '! Your Cruise leaves on ' + start + ' and returns on ' + to + '!');
   				}
