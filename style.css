@@ -1,0 +1,28 @@
+#cruise {
+	width: 225px;
+}
+
+label {
+	display: block;
+	margin: 1rem 0 1rem 1rem;
+	text-align: right;
+}
+
+label span {
+	font-size: 0.9rem;
+	color: red;
+	display: block;
+}
+
+#submit {
+	background-color: #008FC0;
+	color: white;
+	border: 1px solid transparent;
+	display: table;
+	margin: 0 auto;
+	margin-right: 0;
+}
+
+.hidden {
+	display: none;
+}	

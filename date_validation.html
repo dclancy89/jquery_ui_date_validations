@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Date Validations</title>
+	<meta charset="utf-8">
+	<meta name="description" content="Plan your Dojo Cruise and keep your dates straight.">
+	<link rel="stylesheet" href="http://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  	<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+  	<script>
+  		
+  		$(document).ready(function() {
+
+  			$('#start').datepicker({minDate: 0});
+  			$('#to').datepicker({minDate: 1});
+
+
+  			$('#submit').click(function(e) {
+  				e.preventDefault();
+
+  				$('span').hide();
+
+  				var start = $('#start').val();
+  				var to = $('#to').val();
+  				var name = $('#name').val();
+
+  				if(start === '') {
+  					$('#start').siblings('span').show();
+  				}
+
+  				if(to === '') {
+  					$('#to').siblings('span').show();
+  				}
+
+  				if(name === '') {
+  					$('#name').siblings('span').show();
+  				}
+
+
+  				if( start != '' &&  to != '' && name != '') {
+  					alert('Thanks ' + name + '! Your Cruise leaves on ' + start + ' and returns on ' + to + '!');
+  				}
+
+  			});
+  		});
+
+  	</script>
+</head>
+<body>
+
+	<div class="container">
+		<h1>Welcome to the Codingdojo plan-a-Cruise!</h1>
+		<form id="cruise">
+			<label>
+				From: <input type="text" id="start"><br /> 
+				<span class="hidden">From date is required.</span>
+			</label>
+
+			<label>
+				To: <input type="text" id="to"><br /> 
+				<span class="hidden">To date is required.</span>
+			</label>
+
+			<label>
+				Name: <input type="text" id="name" name="name"><br /> 
+				<span class="hidden">Name is required.</span>
+			</label>
+
+			<input type="submit" id="submit" value="Check Dates">
+
+		</form>
+	</div>
+
+</body>
+</html>
